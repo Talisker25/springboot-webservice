@@ -24,5 +24,7 @@ repositories {
 
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter-web')
+    implementation('org.projectlombok:lombok') // 롬복 사용을 위해 선언
+    annotationProcessor('org.projectlombok:lombok') // 이게 없다면 롬복 어노테이션 사용 시 먹히지 않음
     testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
