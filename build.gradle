@@ -24,7 +24,12 @@ repositories {
 
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter-web')
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa') // jpa 라이브러리
     implementation('org.projectlombok:lombok') // 롬복 사용을 위해 선언
-    annotationProcessor('org.projectlombok:lombok') // 이게 없다면 롬복 어노테이션 사용 시 먹히지 않음
+    implementation('com.h2database:h2') // H2 데이터베이스
+    implementation('org.springframework.boot:spring-boot-starter-jdbc')
     testImplementation('org.springframework.boot:spring-boot-starter-test')
+    annotationProcessor('org.projectlombok:lombok') // 이게 없다면 롬복 어노테이션 사용 시 먹히지 않음
+    implementation group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+    implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
 }
