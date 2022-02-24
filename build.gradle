@@ -28,8 +28,8 @@ dependencies {
     implementation('org.projectlombok:lombok') // 롬복 사용을 위해 선언
     implementation('com.h2database:h2') // H2 데이터베이스
     implementation('org.springframework.boot:spring-boot-starter-jdbc')
+    implementation('org.springdoc:springdoc-openapi-ui:1.6.6') //swagger springdoc
+    implementation('org.springframework.boot:spring-boot-starter-mustache') //mustache
     testImplementation('org.springframework.boot:spring-boot-starter-test')
     annotationProcessor('org.projectlombok:lombok') // 이게 없다면 롬복 어노테이션 사용 시 먹히지 않음
-    implementation group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
-    implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
 }
