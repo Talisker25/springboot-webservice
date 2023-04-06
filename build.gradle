@@ -64,3 +64,8 @@ configurations {
     }
 }
 //querydsl 추가 끝
+
+//서버에서 manifest를 못찾는 현상 발생
+jar {
+    enabled = false
+}
