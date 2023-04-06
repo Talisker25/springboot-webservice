@@ -7,12 +7,11 @@ spring:
             client-id: 443091072970-213s3rvbmp7lv20gh0rk4cn0o9i3iaj6.apps.googleusercontent.com
             client-secret: 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
             scope: profile,email
-            redirect-uri: http://localhost:8080/login/oauth2/code/google
           naver:
             client-id: 4EFmd0pxFttHp1ulzg_S
             client-secret: XZc4GW26CU
             scope: name,email,profile_image
-            redirect-uri: http://localhost:8080/login/oauth2/code/naver
+            redirect-uri: "{baseUrl}/{action}/oauth2/code/{registrationId}"
             authorization-grant-type: authorization_code
             client-name: Naver
         provider:
