@@ -38,6 +38,9 @@ dependencies {
     //spring security 설정
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
 
+    //jdbc
+    implementation 'org.springframework.session:spring-session-jdbc'
+
     //lombok
     compileOnly 'org.projectlombok:lombok' // 롬복 사용을 위해 선언
 

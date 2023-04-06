@@ -24,17 +24,31 @@ public class OAuthAttributes {
         this.picture = picture;
     }
 
-    public static OAuthAttributes of(String registrationId, String userNameAttiributeName, Map<String, Object> attributes) {
-        return ofGoogle(userNameAttiributeName, attributes);
+    public static OAuthAttributes of(String registrationId, String userNameAttributeName, Map<String, Object> attributes) {
+        if ("naver".equals(registrationId)) {
+            return ofNaver("id", attributes);
+        }
+        return ofGoogle(userNameAttributeName, attributes);
     }
 
     public static OAuthAttributes ofGoogle(String userNameAttiributeName, Map<String, Object> attributes) {
         return OAuthAttributes.builder()
                 .name((String) attributes.get("name"))
-                .nameAttributeKey((String) attributes.get("nameAttributeKey"))
                 .email((String) attributes.get("email"))
                 .picture((String) attributes.get("picture"))
                 .attributes(attributes)
+                .nameAttributeKey(userNameAttiributeName)
+                .build();
+    }
+
+    public static OAuthAttributes ofNaver(String userNameAttiributeName, Map<String, Object> attributes) {
+        Map<String, Object> response = (Map<String, Object>) attributes.get("response");
+
+        return OAuthAttributes.builder()
+                .name((String) response.get("name"))
+                .email((String) response.get("email"))
+                .picture((String) response.get("profile_image"))
+                .attributes(response)
                 .nameAttributeKey(userNameAttiributeName)
                 .build();
     }
