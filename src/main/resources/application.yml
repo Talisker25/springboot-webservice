@@ -11,7 +11,8 @@ spring:
     active: dev
   session:
     store-type: jdbc
-
+  pid:
+    file: /home/ec2-user/app/step2/springboot-webservice.pid
 
 springdoc:
   swagger-ui:
