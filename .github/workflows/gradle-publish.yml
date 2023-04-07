@@ -16,7 +16,7 @@ on:
     types: [push]
   push:
     branches: [master]
-  workflow_dispatch: 
+  workflow_dispatch:
 
 jobs:
   build:
@@ -39,9 +39,9 @@ jobs:
         run: chmod +x ./gradlew # (7)
         shell: bash
 
-    - name: Build with Gradle
-      run: ./gradlew clean build -x test # (8)
-      shell: bash
+      - name: Build with Gradle
+        run: ./gradlew clean build -x test # (8)
+        shell: bash
 
       - name: Get current time
         uses: 1466587594/get-current-time@v2  # (9)
@@ -53,7 +53,7 @@ jobs:
       - name: Show Current Time
         run: echo "CurrentTime=${{steps.current-time.outputs.formattedTime}}" # (10)
         shell: bash
-      
+
       # 아래부분이 추가되는 내용입니다.
       - name: Make zip file
         run: zip -r ./$PROJECT_NAME.zip .         # (12)
@@ -68,4 +68,4 @@ jobs:
 
       - name: Upload to S3
         run: aws s3 cp --region ap-northeast-2 ./$PROJECT_NAME.zip s3://$S3_BUCKET_NAME/$PROJECT_NAME/$PROJECT_NAME.zip    #(14)
-      
+
