@@ -8,6 +8,14 @@ spring:
         - oauth
         - prod
         - prod-db
+      prod1:
+        - oauth
+        - prod1
+        - prod-db
+      prod2:
+        - oauth
+        - prod2
+        - prod-db
     active: dev
   session:
     store-type: jdbc

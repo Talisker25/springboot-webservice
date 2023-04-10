@@ -1,0 +1,12 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  session:
+    store-type: jdbc
+  config:
+    activate:
+      on-profile: prod1
+server:
+  port: 8081
